@@ -91,8 +91,20 @@ function fetchImage(){
 
 function addMemberCard(){
   let name = fetchName();
+  if (name == ""){
+    alert("Non hai inserito nessun nome!");
+    return;
+  }
   let role = fetchRole();
+  if (role == ""){
+    alert("Non hai inserito nessun ruolo!");
+    return;
+  }
   let image = fetchImage();
+  if (image == ""){
+    alert("Non hai inserito nessun indirizzo immagine!");
+    return;
+  }
   createCard(name,role,image);
 }
 
