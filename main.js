@@ -39,21 +39,6 @@ const team = [
 ];
 
 const teamContainer = document.querySelector(".team-container");
-for (let i=0; i<team.length;i++){
-  teamContainer.innerHTML += 
-  `<div class="team-card">
-    <div class="card-image">
-      <img
-      src="img/` + team[i][`image`]
-      + `"alt=` + team[i][`name`] + 
-      `/>
-    </div>
-    <div class="card-text">
-      <h3>` + team[i][`name`] + `</h3>
-      <p>` + team[i][`role`] + `</p>
-    </div>
-  </div>`;
-}
 
 function createCard(name,role,image){
   teamContainer.innerHTML += 
@@ -61,7 +46,7 @@ function createCard(name,role,image){
     <div class="card-image">
       <img
       src="` + image
-      + `"alt="` + name + 
+      + `" alt="` + name + 
       `"/>
     </div>
     <div class="card-text">
@@ -72,6 +57,9 @@ function createCard(name,role,image){
 }
 
 
+for (let i=0; i<team.length;i++){
+  createCard(team[i][`name`],team[i][`role`],`img/` + team[i][`image`])
+}
 
 function fetchName(){
   let name = document.getElementById("name").value;
